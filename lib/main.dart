@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'package:fluttertoast/fluttertoast.dart';
+
+import 'tabs/Calendar.dart';
+import 'tabs/Stats.dart';
+import 'tabs/Subjects.dart';
+import 'tabs/Home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,16 +34,20 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin{
   late TabController _tabController;
 
-  static const _kTabPages = <Widget>[
-    Center(child: Text("Page 1")),
-    Center(child: Text("Page 2")),
-    Center(child: Text("Page 3")),
+
+  static var _kTabPages = <Widget>[
+    HomeWidget,
+    SubjectWidget,
+    CalenderWidget,
+    StatWidget,
   ];
 
   static const _kTabs = <Widget>[
     Tab(icon: Icon(Icons.home), text: "Home"),
     Tab(icon: Icon(Icons.subject), text: "Fächer"),
-    Tab(icon: Icon(Icons.bar_chart), text: "stats")
+    Tab(icon: Icon(Icons.calendar_today),text: "Calendar"),
+    Tab(icon: Icon(Icons.bar_chart), text: "stats"),
+
   ];
 
   @override
