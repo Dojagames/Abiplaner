@@ -35,20 +35,11 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: const <Widget>[Text('Hallo Welt')],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: Test,
-        tooltip: 'Toast',
-        child: const Icon(Icons.slideshow),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
   void Test(){
-    Fluttertoast.showToast(
-        msg: "This is a test",
-        toastLength: Toast.LENGTH_SHORT,
-    );
-  }
 
+  }
 }
