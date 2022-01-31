@@ -25,29 +25,50 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin{
+  late TabController _tabController;
 
-  String Text1 = "yeet";
+  static const _kTabPages = <Widget>[
+    Center(child: Text("Page 1")),
+    Center(child: Text("Page 2")),
+    Center(child: Text("Page 3")),
+  ];
+
+  static const _kTabs = <Widget>[
+    Tab(icon: Icon(Icons.home), text: "Home"),
+    Tab(icon: Icon(Icons.subject), text: "Fächer"),
+    Tab(icon: Icon(Icons.bar_chart), text: "stats")
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(
+      length: _kTabPages.length,
+      vsync: this,
+    );
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Test"),
-        centerTitle: true,
+      body: TabBarView(
+        controller: _tabController,
+        children: _kTabPages,
       ),
-      body:
-      Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[Text(Text1)],
+      bottomNavigationBar: Material(
+        color: Colors.blue,
+        child: TabBar(
+          tabs: _kTabs,
+          controller: _tabController,
         ),
       ),
     );
-  }
-
-  //test
-  void Test(){
-
   }
 }
