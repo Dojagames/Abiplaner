@@ -1,0 +1,62 @@
+Abiplaner:
+
+App workflow:
+    1. start:
+       set Username
+       set subjects (ggf. gK / LK)
+       create timetable
+
+    2. normal Startup:
+                     
+
+
+App Apearance:
+    Navbar at bottom
+    Appbar for "popup windows" with return button
+    User / Settings page
+    "Abi" Page -- keep track of semesters, detailed stats about marks, averages and exams
+    Calendar integration
+	
+
+Build workflow:
+    Apearance: 
+        App Icon
+        Ui color pallete
+
+User settings:
+    set startup page
+	
+
+
+Features:
+    v0.1:
+	Implementing basic UI
+	Add school subjects (basic)
+	add marks to subjects
+	calculating average
+    v0.5:    
+	implementing own subjects
+	improving ui
+	Timetable
+	add Homeworks to subjects
+        select properties for subjects (colors, Lk/gK usw.)
+	dashboard (startup page)
+    v0.9:
+	explicit "abi" page (exams, semesters, averages, )
+	final UI -> 
+	schedule (Homework, exams...) [Task schedule tool()]	
+	
+    v1.0:
+	mark prediction page, what marks do you need to score the targeted average
+	graphs and visalisation
+	calendar integration + google calendar sync
+	choose Startpage
+		
+
+    future:
+        Accountsystem / friends 
+        create groups(classes) -> Scoreboardsystem; sync homework with group
+        ?chat
+        Webapp -> more user, better compatibility
+	sync between devices
+	backup
