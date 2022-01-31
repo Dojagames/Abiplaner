@@ -5,7 +5,7 @@ App workflow:
        set Username
        set subjects (ggf. gK / LK)
        create timetable
-
+       choose State
     2. normal Startup:
                      
 
