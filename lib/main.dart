@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   static const _kTabs = <Widget>[
     Tab(icon: Icon(Icons.home), text: "Home"),
     Tab(icon: Icon(Icons.subject), text: "Fächer"),
-    Tab(icon: Icon(Icons.calendar_today),text: "Calendar"),
+    Tab(icon: Icon(Icons.calendar_today),text: "Kalender"),
     Tab(icon: Icon(Icons.bar_chart), text: "stats"),
 
   ];
