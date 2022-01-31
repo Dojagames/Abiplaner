@@ -6,6 +6,7 @@ import 'tabs/Calendar.dart';
 import 'tabs/Stats.dart';
 import 'tabs/Subjects.dart';
 import 'tabs/Home.dart';
+import 'data/vars.dart';
 
 void main() {
   runApp(const MyApp());
