@@ -1,24 +1,24 @@
 class Subject {
 
   String name;
-  var marks_exams = List<int>.empty();
-  var marks_tests = List<int>.empty();
+  var marksExams = List<int>.empty();
+  var marksTests = List<int>.empty();
 
   Subject(this.name);
 
   List<int> getExams() {
-    return this.marks_exams;
+    return marksExams;
   }
 
   List<int> getTests() {
-    return this.marks_tests;
+    return marksTests;
   }
 
   addExam(int exam) {
-    this.marks_exams.add(exam);
+    marksExams.add(exam);
   }
 
   addTest(int test) {
-    this.marks_tests.add(test);
+    marksTests.add(test);
   }
 }

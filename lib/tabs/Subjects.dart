@@ -1,5 +1,8 @@
+import 'package:abiplaner/data/Subject.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+import 'package:abiplaner/data/vars.dart' as vars;
 
 /*
 show all selected Subjects,
@@ -29,6 +32,6 @@ Scaffold(
 
 
 
-void addSubject(String _subject){
-  //add subject
+void addSubject(String _subjectName){
+  vars.addSubject(Subject(_subjectName));
 }
