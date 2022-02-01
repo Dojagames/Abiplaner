@@ -1,3 +1,34 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-Widget SubjectWidget = Center(child: Text("Page 2"));
+/*
+show all selected Subjects,
+  click on subject for overview (add/see marks, Homework/Exam dates)
+
+button to edit / change subjects
+
+first time opening this page: automatically open edit page.
+
+use listview to display and setState(){}; to refresh the widget
+
+in View, sort in LK / gK and alphabetically
+*/
+
+
+Widget SubjectWidget =
+Scaffold(
+  body: const Center(),
+  floatingActionButton: FloatingActionButton(
+      onPressed: (){
+        addSubject("String");
+
+      },
+    child: const Icon(Icons.edit),
+  ),
+);
+
+
+
+void addSubject(String _subject){
+  //add subject
+}
