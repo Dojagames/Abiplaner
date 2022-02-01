@@ -17,7 +17,7 @@ in View, sort in LK / gK and alphabetically
 
 Widget SubjectWidget =
 Scaffold(
-  body: const Center(),
+  body: const Center(child: Text("Page 2")),
   floatingActionButton: FloatingActionButton(
       onPressed: (){
         addSubject("String");
