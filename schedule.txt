@@ -16,6 +16,7 @@ App Apearance:
     User / Settings page
     "Abi" Page -- keep track of semesters, detailed stats about marks, averages and exams
     Calendar integration
+    Stats über das Jahr, welches Fach hatte die meisten Hausaufgaben usw.
 	
 
 Build workflow:

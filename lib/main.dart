@@ -39,14 +39,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin{
   late TabController _tabController;
 
-
   static var _kTabPages = <Widget>[
     HomeWidget,
     SubjectWidget,
     CalenderWidget,
     StatWidget,
   ];
-
 
   @override
   void initState() {
