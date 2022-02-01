@@ -11,6 +11,7 @@ import 'data/Themes.dart';
 
 void main() {
   runApp(const MyApp());
+  loadData();
 }
 
 
