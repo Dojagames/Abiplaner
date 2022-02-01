@@ -1,17 +1,24 @@
 import 'package:abiplaner/data/Subject.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 List<Subject> _subjects = List.empty();
 
-loadData() {
-	if (_subjects.isEmpty) {
-
-	}
+loadData() async{
+  // SharedPreferences prefs = await SharedPreferences.getInstance();
+  // List <String> _buffer = <String>[];
+  // _buffer = prefs.getStringList("subjects")!;
+  // _buffer.forEach((e) {
+  //   _subjects.add();
+  // });
 }
 
-saveData() {
-	if (_subjects.isNotEmpty)   {
-
-	}
+saveData() async{
+  // SharedPreferences prefs = await SharedPreferences.getInstance();
+  // List <String> _buffer = <String>[];
+  // _subjects.forEach((e) {
+  //     _buffer.add(e.toString());
+  // });
+  // await prefs.setStringList("subjects", _buffer);
 }
 
 getSubject(int location) {
