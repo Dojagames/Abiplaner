@@ -1,13 +1,19 @@
+import 'package:abiplaner/data/vars.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
-Widget StatWidget = Center(child: Text("Page 4"));
+Widget StatWidget =
+const Scaffold(
+    body: BarChartAvgs(),
 
-/// data to plot
-final _data1 = <String, double>{};
-final _data2 = <String, double>{};
+);
+
+// data to plot
+final _marksAvgs = <int, double>{1: 1.8, 2: 8.4, 3: 6.9};
+final _marksExams = <int, double>{1: 0.8, 2: 7.4, 3: 12.9};
+final _marksTests = <int, double>{1: 6.9, 2: 4.3, 3: 0.2};
+final List<String> subjects = getSubjects();
 
 class BarChartAvgs extends StatefulWidget {
   const BarChartAvgs({Key? key}) : super(key: key);
@@ -23,22 +29,23 @@ class _BarChartState extends State<BarChartAvgs> {
 
   @override
   Widget build(BuildContext context) {
-    /// !!Step2: convert data into barGroups.
+    // convert data into BarChartGroups
     final barGroups = <BarChartGroupData>[
-      for (final entry in _data1.entries)
+      for (final entry in _marksExams.entries)
         BarChartGroupData(
-          x: 1,//entry.key.toInt()
+          x: entry.key,
           barRods: [
-            BarChartRodData(y: entry.value, colors: [Colors.blue]),
-            BarChartRodData(y: _data2[entry.key]!, colors: [Colors.red]),
+            if (this._showExams) BarChartRodData(y: entry.value, colors: [Colors.blue]),
+            if (this._showTests)BarChartRodData(y: _marksTests[entry.key]!.ceilToDouble(), colors: [Colors.red]),
+            if (this._showAvg) BarChartRodData(y: _marksAvgs[entry.key]!.ceilToDouble(), colors: [Colors.green]),
           ],
         ),
     ];
 
     /// !!Step3: prepare barChartData
     final barChartData = BarChartData(
-      maxY: 25,
-      // ! The data to show
+      maxY: 15,
+      // the data to show
       barGroups: barGroups,
       barTouchData: BarTouchData(
         enabled: true,
@@ -53,8 +60,8 @@ class _BarChartState extends State<BarChartAvgs> {
       // ! Axis title
       axisTitleData: FlAxisTitleData(
         show: true,
-        bottomTitle: AxisTitle(titleText: 'Month', showTitle: true),
-        leftTitle: AxisTitle(titleText: 'Sales', showTitle: true),
+        bottomTitle: AxisTitle(titleText: 'Subjects', showTitle: true),
+        leftTitle: AxisTitle(titleText: 'Points', showTitle: true),
       ),
       // ! Ticks in the axis
       titlesData: FlTitlesData(
@@ -62,9 +69,7 @@ class _BarChartState extends State<BarChartAvgs> {
         bottomTitles: SideTitles(
           showTitles: true, // this is false by-default.
           // ! Decides how to show bottom titles,
-          // here we convert double to month names
-          getTitles: (double val) =>
-              DateFormat.MMM().format(DateTime(2020, val.toInt())),
+          // here we convert double to month name
         ),
         leftTitles: SideTitles(
           showTitles: true,

@@ -25,6 +25,10 @@ getSubject(int location) {
   return _subjects.elementAt(location);
 }
 
+getSubjects() {
+  return _subjects;
+}
+
 addSubject(Subject subject) {
 	_subjects.add(subject);
 }
