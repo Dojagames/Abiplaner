@@ -1,3 +1,5 @@
+import 'package:abiplaner/data/Subject.dart';
+import 'package:abiplaner/data/Themes.dart';
 import 'package:abiplaner/data/vars.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -9,11 +11,20 @@ const Scaffold(
 
 );
 
+initData() {
+  for (int i = 0; i < subjects.length; i++) {
+    _marksAvgs[i] = subjects.elementAt(i).getAvg();
+    _marksExams[i] = subjects.elementAt(i).getExamAvg();
+    _marksTests[i] = subjects.elementAt(i).getTestAvg();
+  }
+}
+
 // data to plot
 final _marksAvgs = <int, double>{1: 1.8, 2: 8.4, 3: 6.9};
 final _marksExams = <int, double>{1: 0.8, 2: 7.4, 3: 12.9};
 final _marksTests = <int, double>{1: 6.9, 2: 4.3, 3: 0.2};
-final List<String> subjects = getSubjects();
+final List<Subject> subjects = getSubjects();
+
 
 class BarChartAvgs extends StatefulWidget {
   const BarChartAvgs({Key? key}) : super(key: key);
@@ -29,6 +40,7 @@ class _BarChartState extends State<BarChartAvgs> {
 
   @override
   Widget build(BuildContext context) {
+    initData();
     // convert data into BarChartGroups
     final barGroups = <BarChartGroupData>[
       for (final entry in _marksExams.entries)
@@ -93,8 +105,8 @@ class _BarChartState extends State<BarChartAvgs> {
 
   Widget _buildControlWidgets() {
     return Container(
-      height: 200,
-      color: Colors.grey[200],
+      height: 180,
+      color: MyThemes.Theme1.backgroundColor,
       child: ListView(
         children: [
           SwitchListTile(
