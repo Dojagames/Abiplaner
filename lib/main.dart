@@ -76,9 +76,9 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
         children: _kTabPages,
       ),
       bottomNavigationBar: SizedBox(
-          height: 51,
+          height: 52,
         child: Container(
-          color: Colors.blue,
+          color: const Color(0xFF283C5C),
           child: TabBar(
             tabs: [
               Tab(icon: SizedBox(child: Icon(Icons.home_outlined, color: _tabController.index == 0 ? Colors.white : Colors.black), height: 15), text: "Home"),
