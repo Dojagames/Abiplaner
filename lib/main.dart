@@ -43,13 +43,6 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     StatWidget,
   ];
 
-  static const _kTabs = <Widget>[
-    Tab(icon: Icon(Icons.home), text: "Home"),
-    Tab(icon: Icon(Icons.subject), text: "Fächer"),
-    Tab(icon: Icon(Icons.calendar_today),text: "Kalender"),
-    Tab(icon: Icon(Icons.bar_chart), text: "stats"),
-
-  ];
 
   @override
   void initState() {
@@ -58,12 +51,18 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
       length: _kTabPages.length,
       vsync: this,
     );
+    _tabController.addListener(_handleTabSelection);
   }
 
   @override
   void dispose() {
     _tabController.dispose();
     super.dispose();
+  }
+
+  void _handleTabSelection() {
+    setState(() {
+    });
   }
 
   @override
@@ -73,12 +72,20 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
         controller: _tabController,
         children: _kTabPages,
       ),
-      bottomNavigationBar: Material(
-        color: Colors.blue,
-        child: TabBar(
-          tabs: _kTabs,
-          controller: _tabController,
-        ),
+      bottomNavigationBar: SizedBox(
+          height: 51,
+        child: Container(
+          color: Colors.blue,
+          child: TabBar(
+            tabs: [
+              Tab(icon: SizedBox(child: Icon(Icons.home_outlined, color: _tabController.index == 0 ? Colors.white : Colors.black), height: 15), text: "Home"),
+              Tab(icon: SizedBox(child: Icon(Icons.subject, color: _tabController.index == 1 ? Colors.white : Colors.black), height: 15), text: "Fächer"),
+              Tab(icon: SizedBox(child: Icon(Icons.calendar_today_rounded, color: _tabController.index == 2 ? Colors.white : Colors.black), height: 15),text: "Kalender"),
+              Tab(icon: SizedBox(child: Icon(Icons.show_chart, color: _tabController.index == 3 ? Colors.white : Colors.black), height: 15), text: "stats"),
+            ],
+            controller: _tabController,
+          ),
+        )
       ),
     );
   }
