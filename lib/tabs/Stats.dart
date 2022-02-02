@@ -47,9 +47,9 @@ class _BarChartState extends State<BarChartAvgs> {
         BarChartGroupData(
           x: entry.key,
           barRods: [
+            if (this._showAvg) BarChartRodData(y: _marksAvgs[entry.key]!.ceilToDouble(), colors: [Colors.green]),
             if (this._showExams) BarChartRodData(y: entry.value, colors: [Colors.blue]),
             if (this._showTests)BarChartRodData(y: _marksTests[entry.key]!.ceilToDouble(), colors: [Colors.red]),
-            if (this._showAvg) BarChartRodData(y: _marksAvgs[entry.key]!.ceilToDouble(), colors: [Colors.green]),
           ],
         ),
     ];
