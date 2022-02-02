@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -9,12 +10,11 @@ import 'tabs/Home.dart';
 import 'data/vars.dart';
 import 'data/Themes.dart';
 
-void main() {
+
+ main()  {
   runApp(const MyApp());
   loadData();
 }
-
-
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -67,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
       bottomNavigationBar: SizedBox(
           height: 52,
         child: Container(
-          color: const Color(0xFF283C5C),
+          color: MyThemes.ThemeMain.bottomAppBarColor,
           child: TabBar(
             tabs: [
               Tab(icon: SizedBox(child: Icon(Icons.home_outlined, color: _tabController.index == 0 ? Colors.white : Colors.black), height: 15), text: "Home"),

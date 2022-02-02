@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 List<Subject> _subjects = List.empty();
 int selectedTheme = 0;
+String username = "User";
 
 
 
