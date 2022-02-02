@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:abiplaner/data/vars.dart';
 import 'package:abiplaner/data/Themes.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 
 Widget HomeWidget =
@@ -20,5 +21,11 @@ Scaffold(
       }),
     ],
   ),
-  body: Center(child: Text("Page 1")),
+  body: SfCalendar(
+    view: CalendarView.workWeek,
+    timeSlotViewSettings: TimeSlotViewSettings(
+        startHour: 1,
+        endHour: maxHours.toDouble(),
+        nonWorkingDays: <int>[DateTime.friday, DateTime.saturday]),
+  )
 );
