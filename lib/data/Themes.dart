@@ -31,10 +31,23 @@ List<ThemeData> themeList = [
     bottomAppBarColor: const Color(0xFF283C5C),
   ),
   ThemeData(
-    backgroundColor: const Color(0xFF182437),
-    scaffoldBackgroundColor: const Color(0xFF182437),
+    backgroundColor: const Color(0xFF464E47),
+    scaffoldBackgroundColor: const Color(0xFF464E47),
     canvasColor: Colors.lightBlue,
-    colorScheme: const ColorScheme.dark().copyWith(secondary: const Color(0xFF6490d6)),
-    bottomAppBarColor: const Color(0xFF283C5C),
+    colorScheme: const ColorScheme.dark().copyWith(secondary: const Color(0xFF59C55E)),
+    bottomAppBarColor: const Color(0xFF308834),
+  ),
+  ThemeData(
+    backgroundColor: const Color(0xFFF5F9E9),
+    scaffoldBackgroundColor: const Color(0xFFF5F9E9),
+    canvasColor: Colors.grey,
+    colorScheme: const ColorScheme.light().copyWith(secondary: const Color(0xFF515751)),
+    bottomAppBarColor: const Color(0xFFC2C1A5),
   )
 ];
+
+enum Themes {
+  DARKBLUE,
+  DARKGREEN,
+  SOFTLIGHT
+}

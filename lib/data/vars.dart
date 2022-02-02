@@ -1,11 +1,12 @@
 import 'package:abiplaner/data/Subject.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'Themes.dart';
+
 List<Subject> _subjects = List.empty();
-int selectedTheme = 0;
+int selectedTheme = Themes.DARKGREEN.index;
 String username = "User";
 int maxHours = 7;
-
 
 
 
@@ -33,6 +34,10 @@ getSubject(int location) {
 
 getSubjects() {
   return _subjects;
+}
+
+setTheme(Themes theme) {
+  selectedTheme = theme.index;
 }
 
 addSubject(Subject subject) {
