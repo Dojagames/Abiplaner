@@ -2,6 +2,10 @@ import 'package:abiplaner/data/Subject.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 List<Subject> _subjects = List.empty();
+int selectedTheme = 0;
+
+
+
 
 loadData() async{
   // SharedPreferences prefs = await SharedPreferences.getInstance();

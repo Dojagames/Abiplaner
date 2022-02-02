@@ -106,7 +106,7 @@ class _BarChartState extends State<BarChartAvgs> {
   Widget _buildControlWidgets() {
     return Container(
       height: 180,
-      color: MyThemes.Theme1.backgroundColor,
+      color: MyThemes.ThemeMain.backgroundColor,
       child: ListView(
         children: [
           SwitchListTile(

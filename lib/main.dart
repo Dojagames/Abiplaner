@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Abiplaner',
-      theme: MyThemes.Theme1,
+      theme: MyThemes.ThemeMain,
       home: const MyHomePage(title: 'MainPage'),
     );
   }

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'vars.dart';
 
 class MyThemes {
-  static final Theme1 = ThemeData(
-    backgroundColor: const Color(0xFF182437),
-    scaffoldBackgroundColor: const Color(0xFF182437),
-    canvasColor: Colors.lightBlue, colorScheme: const ColorScheme.dark().copyWith(secondary: const Color(0xFF6490d6)),
+  static final ThemeMain = ThemeData(
+    backgroundColor: themeList[selectedTheme].backgroundColor,
+    scaffoldBackgroundColor: themeList[selectedTheme].scaffoldBackgroundColor,
+    canvasColor: themeList[selectedTheme].canvasColor,
+    colorScheme: themeList[selectedTheme].colorScheme,
     //Listview
   );
-  static final Theme2 = ThemeData(
 
-  );
+
+
 
   var pallette = <Color>[
     const Color(0xFF182437), // Background
@@ -18,3 +20,18 @@ class MyThemes {
 
   ];
 }
+
+List<ThemeData> themeList = [
+  ThemeData(
+    backgroundColor: const Color(0xFF182437),
+    scaffoldBackgroundColor: const Color(0xFF182437),
+    canvasColor: Colors.lightBlue,
+    colorScheme: const ColorScheme.dark().copyWith(secondary: const Color(0xFF6490d6)),
+  ),
+  ThemeData(
+    backgroundColor: const Color(0xFF182437),
+    scaffoldBackgroundColor: const Color(0xFF182437),
+    canvasColor: Colors.lightBlue,
+    colorScheme: const ColorScheme.dark().copyWith(secondary: const Color(0xFF6490d6)),
+  )
+];
