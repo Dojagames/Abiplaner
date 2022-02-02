@@ -12,12 +12,11 @@ Scaffold(
     centerTitle: true,
     backgroundColor: MyThemes.ThemeMain.bottomAppBarColor,
     actions: [
-      IconButton(icon: const Icon(Icons.settings),splashRadius: 5 ,onPressed: () {
+      IconButton(icon: const Icon(Icons.settings),enableFeedback: false,splashRadius: 5 ,onPressed: () {
         Fluttertoast.showToast(
             msg: 'opening settings menu',
             toastLength: Toast.LENGTH_SHORT,
-        );
-        //popup Settingsmenu
+        );//popup Settingsmenu
       }),
     ],
   ),

@@ -86,6 +86,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
               Tab(icon: SizedBox(child: Icon(Icons.calendar_today_rounded, color: _tabController.index == 2 ? Colors.white : Colors.black), height: 15),text: "Kalender"),
               Tab(icon: SizedBox(child: Icon(Icons.show_chart, color: _tabController.index == 3 ? Colors.white : Colors.black), height: 15), text: "stats"),
             ],
+            enableFeedback: false,
             controller: _tabController,
           ),
         )
