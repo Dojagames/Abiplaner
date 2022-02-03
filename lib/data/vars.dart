@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'Themes.dart';
 
 List<Subject> _subjects = List.empty();
-int selectedTheme = Themes.DARKGREEN.index;
+int selectedTheme = Themes.DARKBLUE.index;
 String username = "User";
 int maxHours = 7;
 

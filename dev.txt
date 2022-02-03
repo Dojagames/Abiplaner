@@ -1,0 +1,5 @@
+Home:
+    Settings:
+        Popupwindow (s)
+    Stundenplan:
+        Gridview custom design (d)

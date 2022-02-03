@@ -17,15 +17,17 @@ Scaffold(
         Fluttertoast.showToast(
             msg: 'opening settings menu',
             toastLength: Toast.LENGTH_SHORT,
-        );//popup Settingsmenu
+        );
+        //Settingsmenu
       }),
     ],
   ),
-  body: SfCalendar(
-    view: CalendarView.workWeek,
-    timeSlotViewSettings: TimeSlotViewSettings(
-        startHour: 1,
-        endHour: maxHours.toDouble(),
-        nonWorkingDays: <int>[DateTime.friday, DateTime.saturday]),
-  )
+  body: Container(
+    child: SfCalendar(
+      view: CalendarView.week,
+      timeSlotViewSettings: const TimeSlotViewSettings(
+          timelineAppointmentHeight: 0),
+
+      ),
+    )
 );
