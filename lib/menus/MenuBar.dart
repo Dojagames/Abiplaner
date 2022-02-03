@@ -1,5 +1,4 @@
 import 'package:abiplaner/data/Themes.dart';
-import 'package:abiplaner/data/vars.dart';
 import 'package:flutter/material.dart';
 
 class MenuBar extends StatelessWidget {
@@ -12,26 +11,43 @@ class MenuBar extends StatelessWidget {
       child: ListView(
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text('Oflutter.com'),
-            accountEmail: Text('example@gmail.com'),
+            accountName: Text('DBS'),
+            accountEmail: Text('dbs@gmail.com'),
             currentAccountPicture: CircleAvatar(
-              backgroundColor: MyThemes.ThemeMain.bottomAppBarColor,
+              backgroundColor: MyThemes.ThemeMain.backgroundColor,
               child: ClipOval(
-                child: Image.network(
-                  'https://oflutter.com/wp-content/uploads/2021/02/girl-profile.png',
-                  fit: BoxFit.cover,
-                  width: 90,
-                  height: 90,
-                ),
+
               ),
             ),
             decoration: BoxDecoration(
-              color: MyThemes.ThemeMain.backgroundColor,
-              image: const DecorationImage(
-                  fit: BoxFit.fill,
-                  image: NetworkImage('https://oflutter.com/wp-content/uploads/2021/02/profile-bg3.jpg')
-              ),
+              color: MyThemes.ThemeMain.bottomAppBarColor,
+
             ),
+          ),
+          ListTile(
+            leading: Icon(Icons.input),
+            title: Text('Welcome'),
+            onTap: () => {},
+          ),
+          ListTile(
+            leading: Icon(Icons.verified_user),
+            title: Text('Profile'),
+            onTap: () => {Navigator.of(context).pop()},
+          ),
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text('Settings'),
+            onTap: () => {Navigator.of(context).pop()},
+          ),
+          ListTile(
+            leading: Icon(Icons.border_color),
+            title: Text('Feedback'),
+            onTap: () => {Navigator.of(context).pop()},
+          ),
+          ListTile(
+            leading: Icon(Icons.exit_to_app),
+            title: Text('Logout'),
+            onTap: () => {Navigator.of(context).pop()},
           ),
         ],
       ),
