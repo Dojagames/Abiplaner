@@ -1,4 +1,5 @@
 import 'package:abiplaner/data/Subject.dart';
+import 'package:abiplaner/menus/MenuBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -23,7 +24,6 @@ Scaffold(
   body: const Center(child: Text("Page 2")),
   floatingActionButton: FloatingActionButton(
       onPressed: (){
-        addSubject("String");
 
       },
     child: const Icon(Icons.edit),
