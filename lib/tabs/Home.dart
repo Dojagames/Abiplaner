@@ -18,7 +18,7 @@ Scaffold(
     centerTitle: true,
     backgroundColor: MyThemes.ThemeMain.bottomAppBarColor,
     leading:
-      IconButton(icon: const Icon(Icons.settings), enableFeedback: false, splashRadius: 5, onPressed: () {
+      IconButton(icon: const Icon(Icons.menu), enableFeedback: false, splashRadius: 5, onPressed: () {
         _menuOpen.currentState!.openDrawer();
         Fluttertoast.showToast(
             msg: 'opening settings menu',
