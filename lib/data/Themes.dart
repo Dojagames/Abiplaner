@@ -24,11 +24,13 @@ class MyThemes {
 
 List<ThemeData> themeList = [
   ThemeData(
-    backgroundColor: const Color(0xFF182437),
+    backgroundColor: const Color(0xFF162032),
     scaffoldBackgroundColor: const Color(0xFF182437),
     canvasColor: Colors.lightBlue,
     colorScheme: const ColorScheme.dark().copyWith(secondary: const Color(0xFF6490d6)),
     bottomAppBarColor: const Color(0xFF283C5C),
+
+
   ),
   ThemeData(
     backgroundColor: const Color(0xFF464E47),
