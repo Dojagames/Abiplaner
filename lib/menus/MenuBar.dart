@@ -1,5 +1,6 @@
 import 'package:abiplaner/data/Themes.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class MenuBar extends StatelessWidget {
   const MenuBar({Key? key}) : super(key: key);
@@ -25,29 +26,39 @@ class MenuBar extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.input),
-            title: Text('Welcome'),
-            onTap: () => {},
-          ),
-          ListTile(
             leading: Icon(Icons.verified_user),
             title: Text('Profile'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () {
+              Fluttertoast.showToast(msg: "Opening profile");
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.color_lens),
+            title: Text('Appearance'),
+            onTap: () {
+              Fluttertoast.showToast(msg: "Opening appearance settings");
+            },
           ),
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () {
+              Fluttertoast.showToast(msg: "Opening settings");
+            },
           ),
           ListTile(
             leading: Icon(Icons.border_color),
             title: Text('Feedback'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () {
+              Fluttertoast.showToast(msg: "Opening feedback");
+            },
           ),
           ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('Logout'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () {
+              Fluttertoast.showToast(msg: "Logging out");
+            },
           ),
         ],
       ),
