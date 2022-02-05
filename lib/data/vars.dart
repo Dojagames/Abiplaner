@@ -1,7 +1,5 @@
 import 'package:abiplaner/data/Subject.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart';
 import 'Themes.dart';
 
 List<Subject> _subjects = List.empty();
