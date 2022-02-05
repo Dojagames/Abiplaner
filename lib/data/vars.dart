@@ -7,19 +7,15 @@ int selectedTheme = Themes.DARKBLUE.index;
 String username = "User";
 int maxHours = 7;
 List<String> subjectNamesList = [];
+List<String> pastYears = [];
+List<List<String>> pastSubjects = [];
 List<List<String>> SubjectsEvents = [];
 List<List<String>> SubjectsMarks = [];
 
 
 void loadAll() async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  final _now = DateTime.now();
-  bool firsthalf = false;
-  int _Ferienende = 6; //get month of the end of summer vacation
-  if(_now.month >= _Ferienende) firsthalf = true;
-  String _schoolyear;
-  if(firsthalf) _schoolyear = _now.year.toString() + "/" + (_now.year + 1).toString();
-  else _schoolyear = (_now.year + 1).toString() + "/" + _now.year.toString();
+  String _schoolyear = Schoolyear();
 
   for(int i = 0; i < subjectNamesList.length; i++){
     List<String> _bufferEvents = prefs.getStringList("$_schoolyear/" + subjectNamesList[i] + "/Events")!;
@@ -31,14 +27,7 @@ void loadAll() async{
 
 void saveALl() async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  final _now = DateTime.now();
-  bool firsthalf = false;
-  int _Ferienende = 6; //get month of the end of summer vacation
-  if(_now.month >= _Ferienende) firsthalf = true;
-  String _schoolyear;
-
-  if(firsthalf) _schoolyear = _now.year.toString() + "/" + (_now.year + 1).toString();
-  else _schoolyear = (_now.year + 1).toString() + "/" + _now.year.toString();
+  String _schoolyear = Schoolyear();
   for(int i = 0; i < subjectNamesList.length; i++){
     prefs.setStringList("$_schoolyear/" + subjectNamesList[i] + "/Events", SubjectsEvents[i]);
     prefs.setStringList("$_schoolyear/" + subjectNamesList[i] + "/Marks", SubjectsMarks[i]);
@@ -47,6 +36,25 @@ void saveALl() async{
 
 void saveSubject(int _subjectIndex) async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
+  String _schoolyear = Schoolyear();
+  prefs.setStringList("$_schoolyear/" + subjectNamesList[_subjectIndex] + "/Events", SubjectsEvents[_subjectIndex]);
+  prefs.setStringList("$_schoolyear/" + subjectNamesList[_subjectIndex] + "/Marks", SubjectsMarks[_subjectIndex]);
+}
+
+void SaveSubjects() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String _schoolyear = Schoolyear();
+  prefs.setStringList("subjectList/$_schoolyear", subjectNamesList);
+}
+
+void LoadSubjects() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String _schoolyear = Schoolyear();
+  subjectNamesList = prefs.getStringList("subjectList/$_schoolyear")!;
+}
+
+
+String Schoolyear(){
   final _now = DateTime.now();
   bool firsthalf = false;
   int _Ferienende = 6; //get month of the end of summer vacation
@@ -56,21 +64,32 @@ void saveSubject(int _subjectIndex) async{
   if(firsthalf) _schoolyear = _now.year.toString() + "/" + (_now.year + 1).toString();
   else _schoolyear = (_now.year + 1).toString() + "/" + _now.year.toString();
 
-  prefs.setStringList("$_schoolyear/" + subjectNamesList[_subjectIndex] + "/Events", SubjectsEvents[_subjectIndex]);
-  prefs.setStringList("$_schoolyear/" + subjectNamesList[_subjectIndex] + "/Marks", SubjectsMarks[_subjectIndex]);
+  return _schoolyear;
 }
 
-void SaveSubjects() async{
+SavePastYears() async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.setStringList("subjectList", subjectNamesList);
+  prefs.setStringList("PastYears", pastYears);
 }
 
-void LoadSubjects() async{
+LoadPastYears() async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  subjectNamesList = prefs.getStringList("subjectList")!;
+  pastYears = prefs.getStringList("PastYears")!;
 }
 
+SavePastSubjects() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  for(int i = 0; i < pastYears.length; i++){
+    prefs.setStringList(pastYears[i] + "Subjects", pastSubjects[i]);
+  }
+}
 
+LoadPastSubjects() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  for(int i = 0; i < pastYears.length; i++){
+    pastSubjects[i] = prefs.getStringList(pastYears[i] + "Subjects")!;
+  }
+}
 
 
 getSubject(int location) {
