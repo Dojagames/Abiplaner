@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
-  @deprecated
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -10,14 +9,12 @@ class ProfilePage extends StatelessWidget {
         title: Text("Profile"),
         backgroundColor: Colors.black,
       ),
-      body: Center(
-        child: RaisedButton(
-          color: Colors.black,
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Go back!',style: TextStyle(color: Colors.white),),
-        ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text("nothing yet")
+          )
+        ],
       ),
     );
   }

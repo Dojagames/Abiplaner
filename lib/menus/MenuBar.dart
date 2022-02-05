@@ -1,8 +1,10 @@
 import 'package:abiplaner/data/Themes.dart';
+import 'package:abiplaner/menus/AppearancePage.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'MenuPage.dart';
+import 'ProfilePage.dart';
+import 'SettingsPage.dart';
 
 class MenuBar extends StatelessWidget {
   const MenuBar({Key? key}) : super(key: key);
@@ -43,6 +45,10 @@ class MenuBar extends StatelessWidget {
             title: Text('Appearance'),
             onTap: () {
               Fluttertoast.showToast(msg: "Opening appearance settings");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AppearancePage()),
+              );
             },
           ),
           ListTile(
@@ -50,13 +56,17 @@ class MenuBar extends StatelessWidget {
             title: Text('Settings'),
             onTap: () {
               Fluttertoast.showToast(msg: "Opening settings");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SettingsPage()),
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.border_color),
             title: Text('Feedback'),
             onTap: () {
-              Fluttertoast.showToast(msg: "Opening feedback");
+              Fluttertoast.showToast(msg: "Opening feedback page");
             },
           ),
           ListTile(
