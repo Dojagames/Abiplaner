@@ -2,6 +2,8 @@ import 'package:abiplaner/data/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'MenuPage.dart';
+
 class MenuBar extends StatelessWidget {
   const MenuBar({Key? key}) : super(key: key);
 
@@ -30,6 +32,10 @@ class MenuBar extends StatelessWidget {
             title: Text('Profile'),
             onTap: () {
               Fluttertoast.showToast(msg: "Opening profile");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfilePage()),
+              );
             },
           ),
           ListTile(
