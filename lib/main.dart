@@ -13,7 +13,6 @@ import 'data/Themes.dart';
 
  main()  {
   runApp(const MyApp());
-  loadData();
 }
 
 class MyApp extends StatelessWidget {
@@ -66,7 +65,6 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     setState(() {
     });
   }
-
 
   @override
   Widget build(BuildContext context) {

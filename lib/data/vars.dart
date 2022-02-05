@@ -8,49 +8,72 @@ List<Subject> _subjects = List.empty();
 int selectedTheme = Themes.DARKBLUE.index;
 String username = "User";
 int maxHours = 7;
-List<String> markList= [];
+List<String> subjectNamesList = [];
+List<List<String>> SubjectsEvents = [];
+List<List<String>> SubjectsMarks = [];
 
-saveFile(String _subject, String _type) async{
+
+void loadAll() async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
   final _now = DateTime.now();
   bool firsthalf = false;
   int _Ferienende = 6; //get month of the end of summer vacation
   if(_now.month >= _Ferienende) firsthalf = true;
+  String _schoolyear;
+  if(firsthalf) _schoolyear = _now.year.toString() + "/" + (_now.year + 1).toString();
+  else _schoolyear = (_now.year + 1).toString() + "/" + _now.year.toString();
 
+  for(int i = 0; i < subjectNamesList.length; i++){
+    List<String> _bufferEvents = prefs.getStringList("$_schoolyear/" + subjectNamesList[i] + "/Events")!;
+    SubjectsEvents.add(_bufferEvents);
+    List<String> _bufferMarks = prefs.getStringList("$_schoolyear/" + subjectNamesList[i] + "/Marks")!;
+    SubjectsMarks.add(_bufferMarks);
+  }
+}
+
+void saveALl() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  final _now = DateTime.now();
+  bool firsthalf = false;
+  int _Ferienende = 6; //get month of the end of summer vacation
+  if(_now.month >= _Ferienende) firsthalf = true;
   String _schoolyear;
 
   if(firsthalf) _schoolyear = _now.year.toString() + "/" + (_now.year + 1).toString();
-    else _schoolyear = (_now.year + 1).toString() + "/" + _now.year.toString();
-  // save list to correct sp
-  if(_type == "Mark"){
-
-  }
-  if(_type == "Event"){
-
+  else _schoolyear = (_now.year + 1).toString() + "/" + _now.year.toString();
+  for(int i = 0; i < subjectNamesList.length; i++){
+    prefs.setStringList("$_schoolyear/" + subjectNamesList[i] + "/Events", SubjectsEvents[i]);
+    prefs.setStringList("$_schoolyear/" + subjectNamesList[i] + "/Marks", SubjectsMarks[i]);
   }
 }
 
-saveVar(String _subject, String _type, int _value){
-  // add object to corresponding List
+void saveSubject(int _subjectIndex) async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  final _now = DateTime.now();
+  bool firsthalf = false;
+  int _Ferienende = 6; //get month of the end of summer vacation
+  if(_now.month >= _Ferienende) firsthalf = true;
+  String _schoolyear;
+
+  if(firsthalf) _schoolyear = _now.year.toString() + "/" + (_now.year + 1).toString();
+  else _schoolyear = (_now.year + 1).toString() + "/" + _now.year.toString();
+
+  prefs.setStringList("$_schoolyear/" + subjectNamesList[_subjectIndex] + "/Events", SubjectsEvents[_subjectIndex]);
+  prefs.setStringList("$_schoolyear/" + subjectNamesList[_subjectIndex] + "/Marks", SubjectsMarks[_subjectIndex]);
 }
 
-loadData() async{
-  // SharedPreferences prefs = await SharedPreferences.getInstance();
-  // List <String> _buffer = <String>[];
-  // _buffer = prefs.getStringList("subjects")!;
-  // _buffer.forEach((e) {
-  //   _subjects.add();
-  // });
+void SaveSubjects() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setStringList("subjectList", subjectNamesList!);
 }
 
-saveData() async{
-  // SharedPreferences prefs = await SharedPreferences.getInstance();
-  // List <String> _buffer = <String>[];
-  // _subjects.forEach((e) {
-  //     _buffer.add(e.toString());
-  // });
-  // await prefs.setStringList("subjects", _buffer);
+void LoadSubjects() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  subjectNamesList = prefs.getStringList("subjectList")!;
 }
+
+
+
 
 getSubject(int location) {
   return _subjects.elementAt(location);
