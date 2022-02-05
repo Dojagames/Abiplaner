@@ -62,7 +62,7 @@ void saveSubject(int _subjectIndex) async{
 
 void SaveSubjects() async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.setStringList("subjectList", subjectNamesList!);
+  prefs.setStringList("subjectList", subjectNamesList);
 }
 
 void LoadSubjects() async{

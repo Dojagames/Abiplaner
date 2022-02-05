@@ -31,7 +31,7 @@ Scaffold(
         GridView.count(
           crossAxisCount: 5,
           crossAxisSpacing: 10.0,
-          mainAxisSpacing: 2.0,
+          mainAxisSpacing: 8.0,
           children: [
             Center(child: Text("Mon", textAlign: TextAlign.center,)),
             Center(child: Text("Tue", textAlign: TextAlign.center,)),
