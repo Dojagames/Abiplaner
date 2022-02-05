@@ -49,7 +49,7 @@ Features:
 	
     v1.0:
 	mark prediction page, what marks do you need to score the targeted average
-	graphs and visalisation
+	graphs and visualisation
 	calendar integration + google calendar sync
 	choose Startpage
 		
