@@ -25,26 +25,26 @@ void loadAll() async{
   }
 }
 
-void saveALl() async{
+void saveAll() async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String _schoolyear = Schoolyear();
   for(int i = 0; i < subjectNamesList.length; i++){
-    prefs.setStringList("$_schoolyear/" + subjectNamesList[i] + "/Events", SubjectsEvents[i]);
-    prefs.setStringList("$_schoolyear/" + subjectNamesList[i] + "/Marks", SubjectsMarks[i]);
+    await prefs.setStringList("$_schoolyear/" + subjectNamesList[i] + "/Events", SubjectsEvents[i]);
+    await prefs.setStringList("$_schoolyear/" + subjectNamesList[i] + "/Marks", SubjectsMarks[i]);
   }
 }
 
 void saveSubject(int _subjectIndex) async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String _schoolyear = Schoolyear();
-  prefs.setStringList("$_schoolyear/" + subjectNamesList[_subjectIndex] + "/Events", SubjectsEvents[_subjectIndex]);
-  prefs.setStringList("$_schoolyear/" + subjectNamesList[_subjectIndex] + "/Marks", SubjectsMarks[_subjectIndex]);
+  await prefs.setStringList("$_schoolyear/" + subjectNamesList[_subjectIndex] + "/Events", SubjectsEvents[_subjectIndex]);
+  await prefs.setStringList("$_schoolyear/" + subjectNamesList[_subjectIndex] + "/Marks", SubjectsMarks[_subjectIndex]);
 }
 
 void SaveSubjects() async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String _schoolyear = Schoolyear();
-  prefs.setStringList("subjectList/$_schoolyear", subjectNamesList);
+  await prefs.setStringList("subjectList/$_schoolyear", subjectNamesList);
 }
 
 void LoadSubjects() async{
@@ -69,7 +69,7 @@ String Schoolyear(){
 
 SavePastYears() async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.setStringList("PastYears", pastYears);
+  await prefs.setStringList("PastYears", pastYears);
 }
 
 LoadPastYears() async{
@@ -80,7 +80,7 @@ LoadPastYears() async{
 SavePastSubjects() async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
   for(int i = 0; i < pastYears.length; i++){
-    prefs.setStringList(pastYears[i] + "Subjects", pastSubjects[i]);
+    await prefs.setStringList(pastYears[i] + "Subjects", pastSubjects[i]);
   }
 }
 
