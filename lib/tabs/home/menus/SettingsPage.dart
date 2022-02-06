@@ -9,7 +9,6 @@ class SettingsPage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Settings"),
-        backgroundColor: Colors.black,
       ),
       body: ListView(
         children: const [

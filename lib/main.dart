@@ -12,6 +12,7 @@ import 'data/Themes.dart';
 
 
  main()  {
+   loadTheme();
   runApp(const MyApp());
 }
 

@@ -1,4 +1,5 @@
 import 'package:abiplaner/data/Themes.dart';
+import 'package:abiplaner/data/vars.dart';
 import 'package:abiplaner/tabs/home/menus/AppearancePage.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -47,7 +48,7 @@ class MenuBar extends StatelessWidget {
               Fluttertoast.showToast(msg: "Opening appearance settings");
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const AppearancePage()),
+                MaterialPageRoute(builder: (context) => AppearancePage(initialThemeIndex: selectedTheme)),
               );
             },
           ),
