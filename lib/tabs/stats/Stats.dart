@@ -5,6 +5,13 @@ import 'package:flutter/widgets.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
+/*
+The stats tab provides the app user with detailed information about his points in the different subjects and other data.
+TODO:
+    - implement listview for different charts
+    - add more charts
+ */
+
 Widget StatWidget =
 const Scaffold(
     body: BarChartAvgs(),

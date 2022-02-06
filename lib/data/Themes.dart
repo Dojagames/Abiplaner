@@ -35,7 +35,7 @@ List<ThemeData> themeList = [
   ThemeData(
     backgroundColor: const Color(0xFF464E47),
     scaffoldBackgroundColor: const Color(0xFF464E47),
-    canvasColor: Colors.lightBlue,
+    canvasColor: Colors.teal,
     colorScheme: const ColorScheme.dark().copyWith(secondary: const Color(0xFF59C55E)),
     bottomAppBarColor: const Color(0xFF308834),
   ),

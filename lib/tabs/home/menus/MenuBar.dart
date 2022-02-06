@@ -7,6 +7,14 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'ProfilePage.dart';
 import 'SettingsPage.dart';
 
+/*
+This class represents the menu bar on the left side of the home tab.
+It gives the user an overview of different actions and settings he can use.
+TODO: - add functionality to feedback and logout options
+      - create content for profile and settings page
+      - improve theme page
+ */
+
 class MenuBar extends StatelessWidget {
   const MenuBar({Key? key}) : super(key: key);
 
