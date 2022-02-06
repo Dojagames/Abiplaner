@@ -1,3 +1,5 @@
+import 'package:abiplaner/data/Themes.dart';
+import 'package:abiplaner/data/vars.dart';
 import 'package:flutter/material.dart';
 
 class AppearancePage extends StatelessWidget {
@@ -12,12 +14,29 @@ class AppearancePage extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       body: ListView(
-        children: const [
-          ListTile(
-            title: Text("nothing yet")
-          )
-        ],
+        children: createColorRadioList()
       ),
     );
   }
+}
+
+List<Widget> createColorRadioList() {
+  List<Widget> widgets = [];
+  for (var theme in Themes.values) {
+    widgets.add(
+      RadioListTile(
+        value: theme.index,
+        groupValue: selectedTheme,
+        title: Text(
+          theme.name.toString(),
+        ),
+        onChanged: (selectedThemeIndex) {
+          setTheme(Themes.values[int.tryParse(selectedThemeIndex!.toString()) ?? 0]);
+        },
+        selected: theme.index == selectedTheme,
+        activeColor: themeList[theme.index].backgroundColor,
+      ),
+    );
+  }
+  return widgets;
 }
