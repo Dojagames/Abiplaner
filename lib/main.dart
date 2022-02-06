@@ -3,10 +3,10 @@ import 'package:flutter/services.dart';
 
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'tabs/Calendar.dart';
-import 'tabs/Stats.dart';
-import 'tabs/Subjects.dart';
-import 'tabs/Home.dart';
+import 'tabs/calendar/Calendar.dart';
+import 'tabs/stats/Stats.dart';
+import 'tabs/subjects/Subjects.dart';
+import 'tabs/home/Home.dart';
 import 'data/vars.dart';
 import 'data/Themes.dart';
 

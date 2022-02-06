@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 
-class SettingsPage extends StatelessWidget {
-  const SettingsPage({Key? key}) : super(key: key);
-
+class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Settings"),
+        title: const Text("Profile"),
         backgroundColor: Colors.black,
       ),
       body: ListView(
-        children: [
+        children: const [
           ListTile(
             title: Text("nothing yet")
           )

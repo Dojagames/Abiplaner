@@ -1,5 +1,5 @@
 import 'package:abiplaner/data/Themes.dart';
-import 'package:abiplaner/menus/AppearancePage.dart';
+import 'package:abiplaner/tabs/home/menus/AppearancePage.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -16,8 +16,8 @@ class MenuBar extends StatelessWidget {
       child: ListView(
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text('DBS'),
-            accountEmail: Text('dbs@gmail.com'),
+            accountName: const Text('DBS'),
+            accountEmail: const Text('dbs@gmail.com'),
             currentAccountPicture: CircleAvatar(
               backgroundColor: MyThemes.ThemeMain.backgroundColor,
               child: ClipOval(
@@ -30,8 +30,8 @@ class MenuBar extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.verified_user),
-            title: Text('Profile'),
+            leading: const Icon(Icons.verified_user),
+            title: const Text('Profile'),
             onTap: () {
               Fluttertoast.showToast(msg: "Opening profile");
               Navigator.push(
@@ -42,36 +42,36 @@ class MenuBar extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.color_lens),
-            title: Text('Appearance'),
+            title: const Text('Appearance'),
             onTap: () {
               Fluttertoast.showToast(msg: "Opening appearance settings");
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AppearancePage()),
+                MaterialPageRoute(builder: (context) => const AppearancePage()),
               );
             },
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
+            leading: const Icon(Icons.settings),
+            title: const Text('Settings'),
             onTap: () {
               Fluttertoast.showToast(msg: "Opening settings");
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SettingsPage()),
+                MaterialPageRoute(builder: (context) => const SettingsPage()),
               );
             },
           ),
           ListTile(
-            leading: Icon(Icons.border_color),
-            title: Text('Feedback'),
+            leading: const Icon(Icons.border_color),
+            title: const Text('Feedback'),
             onTap: () {
               Fluttertoast.showToast(msg: "Opening feedback page");
             },
           ),
           ListTile(
-            leading: Icon(Icons.exit_to_app),
-            title: Text('Logout'),
+            leading: const Icon(Icons.exit_to_app),
+            title: const Text('Logout'),
             onTap: () {
               Fluttertoast.showToast(msg: "Logging out");
             },
