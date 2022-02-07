@@ -28,30 +28,30 @@ class Subject {
   }
   
   double getExamAvg() {
-    int sum = 0;
-    marksExams.forEach((element) {sum += element;});
-    return sum / marksExams.length;
+    int _sum = 0;
+    marksExams.forEach((element) {_sum += element;});
+    return _sum / marksExams.length;
   }
 
   double getTestAvg() {
-    int sum = 0;
-    marksTests.forEach((element) {sum += element;});
-    return sum / marksTests.length;
+    int _sum = 0;
+    marksTests.forEach((element) {_sum += element;});
+    return _sum / marksTests.length;
   }
   
-  setName(String name) {
-    this.name = name;
+  setName(String _name) {
+    this.name = _name;
   }
 
-  addExam(int exam) {
-    marksExams.add(exam);
+  addExam(int _exam) {
+    marksExams.add(_exam);
   }
 
-  addTest(int test) {
-    marksTests.add(test);
+  addTest(int _test) {
+    marksTests.add(_test);
   }
   
-  setRatio(double ratio) {
-    this.ratio = ratio;
+  setRatio(double _ratio) {
+    this.ratio = _ratio;
   }
 }

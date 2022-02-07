@@ -2,10 +2,12 @@ import 'package:abiplaner/data/Subject.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Themes.dart';
 
-List<Subject> _subjects = List.empty();
+List<Subject> subjects = List.empty();
 int selectedTheme = Themes.DARKBLUE.index;
 String username = "User";
 int maxHours = 7;
+double tableWidthSpacing = 35;
+
 List<String> subjectNamesList = [];
 List<String> pastYears = [];
 List<List<String>> pastSubjects = [];
@@ -56,12 +58,12 @@ void LoadSubjects() async{
 
 String Schoolyear(){
   final _now = DateTime.now();
-  bool firsthalf = false;
+  bool _firsthalf = false;
   int _Ferienende = 6; //get month of the end of summer vacation
-  if(_now.month >= _Ferienende) firsthalf = true;
+  if(_now.month >= _Ferienende) _firsthalf = true;
   String _schoolyear;
 
-  if(firsthalf) _schoolyear = _now.year.toString() + "/" + (_now.year + 1).toString();
+  if(_firsthalf) _schoolyear = _now.year.toString() + "/" + (_now.year + 1).toString();
   else _schoolyear = (_now.year + 1).toString() + "/" + _now.year.toString();
 
   return _schoolyear;
@@ -92,16 +94,16 @@ LoadPastSubjects() async{
 }
 
 
-getSubject(int location) {
-  return _subjects.elementAt(location);
+getSubject(int _location) {
+  return subjects.elementAt(_location);
 }
 
 getSubjects() {
-  return _subjects;
+  return subjects;
 }
 
-setTheme(Themes theme) {
-  selectedTheme = theme.index;
+setTheme(Themes _theme) {
+  selectedTheme = _theme.index;
 }
 
 loadTheme() async {
@@ -115,10 +117,10 @@ saveTheme() async {
   prefs.setInt("selectedTheme", selectedTheme);
 }
 
-addSubject(Subject subject) {
-	_subjects.add(subject);
+addSubject(Subject _subject) {
+	subjects.add(_subject);
 }
 
-removeSubject(int location) {
-  _subjects.removeAt(location);
+removeSubject(int _location) {
+  subjects.removeAt(_location);
 }
