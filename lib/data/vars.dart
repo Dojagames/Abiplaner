@@ -106,17 +106,13 @@ setTheme(Themes theme) {
 
 loadTheme() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  try {
-    selectedTheme = int.tryParse(prefs.getString("selectedTheme")!) ?? 0;
-  }
-  on Exception catch (_, e) {
-    selectedTheme = 0;
-  }
+  selectedTheme = prefs.getInt("selectedTheme")!;
+
 }
 
 saveTheme() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.setString("selectedTheme", selectedTheme.toString());
+  prefs.setInt("selectedTheme", selectedTheme);
 }
 
 addSubject(Subject subject) {
