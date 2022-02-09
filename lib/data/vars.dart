@@ -2,12 +2,23 @@ import 'package:abiplaner/data/Subject.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Themes.dart';
 
+//common
 List<Subject> subjects = List.empty();
 int selectedTheme = Themes.DARKBLUE.index;
 String username = "User";
 int maxHours = 7;
+int lengthOfLesson = 45;
+List<double> Unterrichtszeiten = [
+  8, 8.75, 9.75, 10.50, 11.75, 12.50, 13.75, 14.50, 15.75
+];
+
+//spacings Home
 double tableWidthSpacing = 35;
 
+//Home Vars
+
+
+//Events / Marks
 List<String> subjectNamesList = [];
 List<String> pastYears = [];
 List<List<String>> pastSubjects = [];

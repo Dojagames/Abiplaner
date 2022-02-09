@@ -8,9 +8,30 @@ import 'package:flutter/widgets.dart';
 import 'package:abiplaner/data/vars.dart';
 import 'package:abiplaner/data/Themes.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:week_of_year/week_of_year.dart';
 
 var physicalScreenSize = window.physicalSize;
 final GlobalKey<ScaffoldState> _menuOpen = GlobalKey();
+
+Color getColorForTime(int _number){
+  _number--;
+  final _now = DateTime.now();
+  double _hour = _now.hour +  _now.minute / 60;
+  if (_hour >= Unterrichtszeiten[_number] && _hour <= Unterrichtszeiten[_number] + (lengthOfLesson / 60)) return Colors.deepOrange;
+  return Colors.white;
+}
+
+Color getColorForDay(int _number){
+  final _now = DateTime.now();
+  if (_now.weekday == _number) return Colors.deepOrange;
+  return Colors.white;
+}
+
+String getCalendarWeek(){
+  final _now = DateTime.now();
+  String _cw = _now.weekOfYear.toString();
+  return _cw;
+}
 
 Widget HomeWidget =
 Scaffold(
@@ -18,7 +39,7 @@ Scaffold(
   drawerEnableOpenDragGesture: false,
   key: _menuOpen,
   appBar: AppBar(
-    title: Text("Dashboard - KW"),
+    title: Text("Dashboard - KW " + getCalendarWeek()),
     centerTitle: true,
     backgroundColor: MyThemes.ThemeMain.bottomAppBarColor,
     leading:
@@ -35,19 +56,26 @@ Scaffold(
     Column(
       children: [
         SizedBox(height: 5),
-        SizedBox(height: 20,width:physicalScreenSize.width, child: Row(children: [SizedBox(width: tableWidthSpacing), Expanded(child: GridView.count(crossAxisCount: 5, crossAxisSpacing: 10,children: const [Text("Mon",textAlign: TextAlign.center),Text("Tue",textAlign: TextAlign.center),Text("Wed",textAlign: TextAlign.center), Text("Thu",textAlign: TextAlign.center), Text("Fri",textAlign: TextAlign.center)],),), SizedBox(width: tableWidthSpacing - 10,),],),),
+        SizedBox(height: 20,width:physicalScreenSize.width, child: Row(children: [SizedBox(width: tableWidthSpacing), Expanded(child: GridView.count(crossAxisCount: 5, crossAxisSpacing: 10,children: [
+          Text("Mon",textAlign: TextAlign.center,style: TextStyle(color: getColorForDay(1))),
+          Text("Tue",textAlign: TextAlign.center,style: TextStyle(color: getColorForDay(2))),
+          Text("Wed",textAlign: TextAlign.center,style: TextStyle(color: getColorForDay(3))),
+          Text("Thu",textAlign: TextAlign.center,style: TextStyle(color: getColorForDay(4))),
+          Text("Fri",textAlign: TextAlign.center,style: TextStyle(color: getColorForDay(5)))],),),
+        SizedBox(width: tableWidthSpacing - 10,),],),),
+
         SizedBox(width:physicalScreenSize.width, height: 356.5,child:Row(
           children: [
             SizedBox(width: tableWidthSpacing, child: Column(children: [
-              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0), child: Text("1")), height: 34)),
-              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0), child: Text("2")), height: 45)),
-              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0.05), child: Text("3")), height: 33.5)),
-              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0), child: Text("4")), height: 44)),
-              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0), child: Text("5")), height: 37)),
-              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0), child: Text("6")), height: 42)),
-              SizedBox(child: Container(child: Align(alignment: Alignment(0, -0.3), child: Text("7")), height: 47)),
-              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0), child: Text("8")), height: 22)),
-              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0.1), child: Text("9")), height: 52)),
+              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0), child: Text("1", style: TextStyle(color: getColorForTime(1)))), height: 34)),
+              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0), child: Text("2", style: TextStyle(color: getColorForTime(2)))), height: 45)),
+              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0.05), child: Text("3", style: TextStyle(color: getColorForTime(3)))), height: 33.5)),
+              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0), child: Text("4", style: TextStyle(color: getColorForTime(4)))), height: 44)),
+              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0), child: Text("5", style: TextStyle(color: getColorForTime(5)))), height: 37)),
+              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0), child: Text("6", style: TextStyle(color: getColorForTime(6)))), height: 42)),
+              SizedBox(child: Container(child: Align(alignment: Alignment(0, -0.3), child: Text("7", style: TextStyle(color: getColorForTime(7)))), height: 47)),
+              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0), child: Text("8", style: TextStyle(color: getColorForTime(8)))), height: 22)),
+              SizedBox(child: Container(child: Align(alignment: Alignment(0, 0.1), child: Text("9", style: TextStyle(color: getColorForTime(9)))), height: 52)),
 
             ])),
             Expanded(child: GridView.count(
