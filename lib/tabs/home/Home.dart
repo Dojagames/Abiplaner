@@ -18,6 +18,8 @@ Color getColorForTime(int _number){
   final _now = DateTime.now();
   double _hour = _now.hour +  _now.minute / 60;
   if (_hour >= Unterrichtszeiten[_number] && _hour <= Unterrichtszeiten[_number] + (lengthOfLesson / 60)) return Colors.deepOrange;
+  if (_number == 0) return Colors.white;
+  if (_hour >= (Unterrichtszeiten[_number -1] + 0.75) && _hour <= Unterrichtszeiten[_number] ) return Colors.lightBlue;
   return Colors.white;
 }
 
