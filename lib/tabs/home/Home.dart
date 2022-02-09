@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:abiplaner/tabs/home/menus/MenuBar.dart';
+import 'package:abiplaner/tabs/home/widgets/schedule.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -60,6 +61,7 @@ Scaffold(
                       borderRadius: BorderRadius.circular(10),
                       color: Color(0xFF2f3a4b),
                     ),
+                    child: Center(child: Text("Mathe", style: TextStyle(fontSize: 16, color: Colors.green),),),
                   ),
                     Container(
                       decoration: BoxDecoration(
