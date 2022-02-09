@@ -35,6 +35,14 @@ String getCalendarWeek(){
   return _cw;
 }
 
+Color getBackgroundColor(int x, int y){
+  return Color(0xFF2f3a4b);
+}
+
+Color getTextColor(int x, int y){
+  return Colors.green;
+}
+
 Widget HomeWidget =
 Scaffold(
   drawer: const MenuBar(),
@@ -91,272 +99,308 @@ Scaffold(
                       borderRadius: BorderRadius.circular(10),
                       color: Color(0xFF2f3a4b),
                     ),
-                    child: Center(child: Text("Mathe", style: TextStyle(fontSize: 16, color: Colors.green),),),
+                    child: Center(child: Text(subjectSchedule[0][0], style: TextStyle(fontSize: 16, color: Colors.green),),),
                   ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xFF2f3a4b),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xFF2f3a4b),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xFF2f3a4b),
-                      ),
-                    ),Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xFF2f3a4b),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xFF2f3a4b),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xFF2f3a4b),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xFF2f3a4b),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xFF2f3a4b),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xFF2f3a4b),
-                      ),
-                    ),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Color(0xFF2f3a4b),
                     ),
+                    child: Center(child: Text(subjectSchedule[1][0], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[2][0], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[3][0], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[4][0], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[0][1], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[1][1], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[2][1], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[3][1], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[4][1], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[0][2], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[1][2], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[2][2], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[3][2], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[4][2], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[0][3], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[1][3], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[2][3], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[3][3], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[4][3], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[0][4], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[1][4], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[2][4], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[3][4], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[4][4], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[0][5], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[1][5], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[2][5], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[3][5], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[4][5], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[0][6], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[1][6], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[2][6], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[3][6], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[4][6], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[0][7], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[1][7], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[2][7], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[3][7], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[4][7], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[0][8], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[1][8], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[2][8], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[3][8], style: TextStyle(fontSize: 16, color: Colors.green),),),
+                  ),Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF2f3a4b),
+                    ),
+                    child: Center(child: Text(subjectSchedule[4][8], style: TextStyle(fontSize: 16, color: Colors.green),),),
                   ),
 
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF2f3a4b),
-                    ),
-                  ),
 
 
 

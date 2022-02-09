@@ -18,6 +18,15 @@ double tableWidthSpacing = 35;
 //Home Vars
 
 
+//Timetable
+List<List<String>> subjectSchedule = [
+  ["Ma", "Ma", "Eng", "Eng", "Sp", "Sp", "Ge", "Ge", ""],
+  ["De", "De", "Inf", "Inf", "", "GRW", "GRW", "", ""],
+  ["Ch", "Ch", "Ph", "Ph", "Geo", "Geo", "Ku", "", ""],
+  ["Mu", "", "Ku", "La", "", "", "Ge", "Ge", "Ma", ""],
+  ["La", "La", "Eth", "Eth", "", "", "De", "De", "Bio"],
+];
+
 //Events / Marks
 List<String> subjectNamesList = [];
 List<String> pastYears = [];
