@@ -21,11 +21,11 @@ final gridCount = List.generate(subCount -1, (index) => '$index');
 
 //Timetable
 List<List<String>> subjectSchedule = [
-  ["Ma", "Ma", "Eng", "Eng", "Sp", "Sp", "Ge", "Ge", ""],
-  ["De", "De", "Inf", "Inf", "", "GRW", "GRW", "", ""],
-  ["Ch", "Ch", "Ph", "Ph", "Geo", "Geo", "Ku", "", ""],
-  ["Mu", "", "Ku", "La", "", "", "Ge", "Ge", "Ma", ""],
-  ["La", "La", "Eth", "Eth", "", "", "De", "De", "Bio"],
+  ["Mu", "Mu", "Frz", "Frz", "Ph", "Ph", "Ma", "", ""],
+  ["Eng", "Eng", "Inf", "Inf", "Ma", "Ma", "De", "", ""],
+  ["Sozi", "Sozi", "Eng", "Eng", "Eth", "Eth", "", "", ""],
+  ["Ma", "Ma", "De", "De", "Ge", "Ge", "Inf", "", ""],
+  ["Ku", "Ku", "Sozi", "Sozi", "Ph", "Ph", "Frz", "", ""],
 ];
 
 //Events / Marks
