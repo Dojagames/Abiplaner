@@ -1,22 +1,12 @@
-import 'dart:ffi';
-
 import 'package:abiplaner/data/vars.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-String _currentSubject = "";
-String _number = "";
-
 List<double> _heightIndex = [
   34, 45, 33.5, 44, 37, 42, 47, 22, 52
 ];
-
-
-setCurSub(String _sub) {
-  _currentSubject = _sub;
-}
 
 String getText(int _number){
   int _lessonInt = (_number/5).floor();
@@ -26,11 +16,9 @@ String getText(int _number){
 return "";
 }
 
-
 Color getColor(){
   return Colors.green;
 }
-
 
 Widget boxWidget(String _number) => Container(
   decoration: BoxDecoration(
@@ -39,6 +27,3 @@ Widget boxWidget(String _number) => Container(
   ),
   child: Center(child: Text(getText(int.parse(_number)), style: TextStyle(fontSize: 16, color: getColor()),),),
 );
-
-
-
