@@ -35,14 +35,6 @@ String getCalendarWeek(){
   return _cw;
 }
 
-Color getBackgroundColor(int x, int y){
-  return Color(0xFF2f3a4b);
-}
-
-Color getTextColor(int x, int y){
-  return Colors.green;
-}
-
 Widget HomeWidget =
 Scaffold(
   drawer: const MenuBar(),
