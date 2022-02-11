@@ -93,6 +93,7 @@ class _DashboardState extends State<Dashboard> {
 
                   ])),
                   Expanded(child: GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 5,
                       crossAxisSpacing: 6.0,
