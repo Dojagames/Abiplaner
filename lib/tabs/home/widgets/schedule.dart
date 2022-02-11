@@ -1,7 +1,5 @@
 import 'package:abiplaner/data/vars.dart';
-import 'package:abiplaner/tabs/home/Home.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 
 String getText(int _number){
@@ -11,7 +9,7 @@ String getText(int _number){
 
 
 Color getBackgroundColor(int _number){
-  return Color(0xFF2f3a4b);
+  return const Color(0xFF2f3a4b);
 }
 
 
@@ -24,7 +22,7 @@ List<int> get2dPositionInTT(int _number){
   for(int i = 0; i < 5; i++){
     if((_number - i) % 5 == 0) return [i, _lessonInt];
   }
-  return[0,0];
+  return[0,_lessonInt];
 }
 
 

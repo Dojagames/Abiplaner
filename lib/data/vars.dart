@@ -80,12 +80,15 @@ void LoadSubjects() async{
 String Schoolyear(){
   final _now = DateTime.now();
   bool _firsthalf = false;
-  int _Ferienende = 6; //get month of the end of summer vacation
-  if(_now.month >= _Ferienende) _firsthalf = true;
+  int Ferienende = 6; //get month of the end of summer vacation
+  if(_now.month >= Ferienende) _firsthalf = true;
   String _schoolyear;
 
-  if(_firsthalf) _schoolyear = _now.year.toString() + "/" + (_now.year + 1).toString();
-  else _schoolyear = (_now.year + 1).toString() + "/" + _now.year.toString();
+  if(_firsthalf) {
+    _schoolyear = _now.year.toString() + "/" + (_now.year + 1).toString();
+  } else {
+    _schoolyear = (_now.year + 1).toString() + "/" + _now.year.toString();
+  }
 
   return _schoolyear;
 }

@@ -1,7 +1,6 @@
 import 'package:abiplaner/data/Subject.dart';
 import 'package:abiplaner/data/Themes.dart';
 import 'package:abiplaner/data/vars.dart';
-import 'package:flutter/widgets.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -54,9 +53,9 @@ class _BarChartState extends State<BarChartAvgs> {
         BarChartGroupData(
           x: entry.key,
           barRods: [
-            if (this._showAvg) BarChartRodData(y: _marksAvgs[entry.key]!.ceilToDouble(), colors: [Colors.green]),
-            if (this._showExams) BarChartRodData(y: entry.value, colors: [Colors.blue]),
-            if (this._showTests)BarChartRodData(y: _marksTests[entry.key]!.ceilToDouble(), colors: [Colors.red]),
+            if (_showAvg) BarChartRodData(y: _marksAvgs[entry.key]!.ceilToDouble(), colors: [Colors.green]),
+            if (_showExams) BarChartRodData(y: entry.value, colors: [Colors.blue]),
+            if (_showTests)BarChartRodData(y: _marksTests[entry.key]!.ceilToDouble(), colors: [Colors.red]),
           ],
         ),
     ];
@@ -118,18 +117,18 @@ class _BarChartState extends State<BarChartAvgs> {
         children: [
           SwitchListTile(
             title: const Text('Show average'),
-            onChanged: (bool val) => setState(() => this._showAvg = val),
-            value: this._showAvg,
+            onChanged: (bool val) => setState(() => _showAvg = val),
+            value: _showAvg,
           ),
           SwitchListTile(
             title: const Text('Show exams'),
-            onChanged: (bool val) => setState(() => this._showExams = val),
-            value: this._showExams,
+            onChanged: (bool val) => setState(() => _showExams = val),
+            value: _showExams,
           ),
           SwitchListTile(
             title: const Text('Show tests'),
-            onChanged: (bool val) => setState(() => this._showTests = val),
-            value: this._showTests,
+            onChanged: (bool val) => setState(() => _showTests = val),
+            value: _showTests,
           ),
         ],
       ),

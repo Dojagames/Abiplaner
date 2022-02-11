@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -13,6 +12,7 @@ import 'data/Themes.dart';
 
  main()  {
    loadTheme();
+   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -39,7 +39,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin{
   late TabController _tabController;
 
-  static var _kTabPages = <Widget>[
+  static final _kTabPages = <Widget>[
     HomeWidget,
     SubjectWidget,
     CalenderWidget,
