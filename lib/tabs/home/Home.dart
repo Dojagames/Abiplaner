@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:abiplaner/tabs/home/menus/MenuBar.dart';
 import 'package:abiplaner/tabs/home/widgets/schedule.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:abiplaner/data/vars.dart';
 import 'package:abiplaner/data/Themes.dart';
@@ -21,7 +22,7 @@ class Dashboard extends StatefulWidget {
   _DashboardState createState() => _DashboardState();
 }
 
-class _DashboardState extends State<Dashboard> {
+class _DashboardState extends State<Dashboard> with AutomaticKeepAliveClientMixin {
 
   Color getColorForTime(int _number){
     _number--;
@@ -134,4 +135,9 @@ class _DashboardState extends State<Dashboard> {
               ),
               )]));
   }
+
+  @override
+  bool get wantKeepAlive => true;
+  //TODO: reload Text / Colors when tab is displayed
+  //TODO: make height dynamic
 }

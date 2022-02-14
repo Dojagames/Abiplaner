@@ -16,7 +16,7 @@ List<double> Unterrichtszeiten = [
 double tableWidthSpacing = 35;
 
 //Home Vars
-int subCount = subjectSchedule[0].length + subjectSchedule[1].length +subjectSchedule[2].length +subjectSchedule[3].length +subjectSchedule[4].length;
+int subCount = maxHours * 5;
 final gridCount = List.generate(subCount, (index) => '$index');
 
 //Timetable

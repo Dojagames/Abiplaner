@@ -39,7 +39,7 @@ class BarChartAvgs extends StatefulWidget {
   _BarChartState createState() => _BarChartState();
 }
 
-class _BarChartState extends State<BarChartAvgs> {
+class _BarChartState extends State<BarChartAvgs> with AutomaticKeepAliveClientMixin {
   bool _showAvg = true;
   bool _showExams = false;
   bool _showTests = false;
@@ -134,4 +134,8 @@ class _BarChartState extends State<BarChartAvgs> {
       ),
     );
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }
