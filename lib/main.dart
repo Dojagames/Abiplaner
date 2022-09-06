@@ -10,9 +10,9 @@ import 'data/vars.dart';
 import 'data/Themes.dart';
 
 
- main()  {
-   loadTheme();
-   WidgetsFlutterBinding.ensureInitialized();
+main()  {
+  loadTheme();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
